@@ -212,26 +212,6 @@ a:focus-visible, button:focus-visible {
   margin-top: 8px;
 }
 
-/* ---- About ---- */
-.about {
-  background: var(--white);
-  padding: 72px 0;
-  border-top: 1px solid rgba(26,26,26,0.06);
-}
-
-.about-inner {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.about h2 {
-  font-size: 1.6rem;
-}
-
-.about p {
-  color: #333;
-}
-
 /* ---- Footer ---- */
 .site-footer {
   background: var(--ink);

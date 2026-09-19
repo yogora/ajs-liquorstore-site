@@ -589,6 +589,15 @@ a:focus-visible, button:focus-visible {
   margin: 0 auto;
 }
 
+/* The Zite snippet hardcodes height:700px on its container via an
+   inline style, which is much taller than this short form actually
+   needs. Override it here (rather than editing the snippet itself)
+   to remove the excess blank space. Adjust this value if the form
+   ever grows or shrinks. */
+.deal-alert-embed > div {
+  height: 420px !important;
+}
+
 /* ---- Placeholder sections (Category pages) ---- */
 .placeholder-section {
   padding: 64px 0;

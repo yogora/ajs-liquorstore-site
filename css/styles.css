@@ -178,29 +178,11 @@ a:focus-visible, button:focus-visible {
 }
 
 .nav-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 16px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  background: var(--white);
-  border: 1px solid rgba(26,26,26,0.08);
-  border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(26,26,26,0.14);
-  padding: 8px;
-  min-width: 180px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
-}
-
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown[open] .nav-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  padding: 8px;
+  min-width: 180px;
 }
 
 .nav-dropdown-menu a {
@@ -215,11 +197,41 @@ a:focus-visible, button:focus-visible {
   color: var(--red);
 }
 
+/* Desktop-only floating popover. Kept in its own min-width query so
+   its position/transform can never leak into the mobile accordion
+   below, which needs static, untransformed, in-flow layout. */
+@media (min-width: 701px) {
+  .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 50%;
+    background: var(--white);
+    border: 1px solid rgba(26,26,26,0.08);
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(26,26,26,0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown[open] .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 /* ---- Hero ---- */
 .hero {
-  padding: 140px 0 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 480px;
+  padding-bottom: 56px;
   text-align: center;
-  background: url("../assets/hero-exterior.png") 35% center / cover no-repeat;
+  background: url("../assets/hero-exterior.png") 35% 35% / cover no-repeat;
 }
 
 .hero-inner {
@@ -549,12 +561,6 @@ a:focus-visible, button:focus-visible {
   }
 
   .nav-dropdown-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    border: none;
-    box-shadow: none;
     padding: 0 0 8px 12px;
     min-width: 0;
     display: none;
@@ -570,7 +576,7 @@ a:focus-visible, button:focus-visible {
   }
 
   .footer-inner { grid-template-columns: 1fr; }
-  .hero { padding: 72px 0 56px; }
+  .hero { min-height: 400px; padding-bottom: 40px; }
   .page-header { padding: 48px 0 40px; }
   .offerings-list { grid-template-columns: 1fr; }
 }

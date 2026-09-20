@@ -236,12 +236,21 @@ a:focus-visible, button:focus-visible {
   min-height: 480px;
   padding-bottom: 56px;
   text-align: center;
-  background: url("../assets/hero-exterior.png") 35% 35% / cover no-repeat;
+  /* Gradient sits on top of the photo so the H1 stays readable
+     against whatever is behind it at the bottom of the frame. */
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0) 60%), url("../assets/hero-exterior.png") 35% 35% / cover no-repeat;
 }
 
 .hero-inner {
   max-width: 640px;
   margin: 0 auto;
+}
+
+.hero-headline {
+  color: var(--white);
+  font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  margin: 0 0 24px;
 }
 
 .sr-only {
@@ -283,6 +292,17 @@ a:focus-visible, button:focus-visible {
 
 .btn-ghost:hover {
   background: var(--red);
+  color: var(--white);
+}
+
+.btn-ghost-ink {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn-ghost-ink:hover {
+  background: var(--ink);
   color: var(--white);
 }
 
@@ -337,28 +357,221 @@ a:focus-visible, button:focus-visible {
   font-family: var(--font-display);
 }
 
-/* ---- Hours & Specials ---- */
-.hours-specials {
+/* ---- This Week In The Store ---- */
+.this-week {
   background: var(--white);
   padding: 64px 0;
   border-top: 1px solid rgba(26,26,26,0.06);
   border-bottom: 1px solid rgba(26,26,26,0.06);
 }
 
-.hs-grid {
+.this-week-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.this-week-header h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.this-week-grid {
   display: grid;
-  max-width: 480px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.week-card {
+  background: var(--off-white);
+  border-radius: 14px;
+  padding: 28px 24px;
   text-align: center;
 }
 
-.special-ad {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(26,26,26,0.12);
+.week-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.week-card-price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--red);
+  margin: 0;
+}
+
+.week-card-note {
+  color: #777;
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+.this-week-more {
+  text-align: center;
+  margin: 32px 0 0;
+}
+
+.this-week-more a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.this-week-more a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Stop In Today ---- */
+.stop-in {
+  background: var(--off-white);
+  padding: 64px 0;
+}
+
+.stop-in-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.stop-in-content h2 {
+  font-size: 1.6rem;
+}
+
+.stop-in-content address {
+  font-style: normal;
+  color: #333;
+  margin: 0 0 12px;
+}
+
+.stop-in-hours {
+  color: #333;
+  margin: 0 0 24px;
+}
+
+.stop-in-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stop-in-map {
+  aspect-ratio: 4 / 3;
+  background: rgba(26,26,26,0.08);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #8a8a8a;
+}
+
+.stop-in-map-pin {
+  color: var(--red);
+}
+
+.stop-in-map-note {
+  margin: 0;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0 24px;
+}
+
+/* ---- Highlights ---- */
+.highlights {
+  background: var(--white);
+  padding: 64px 0;
+  border-top: 1px solid rgba(26,26,26,0.06);
+}
+
+.highlights-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 36px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.highlight-card {
+  text-align: center;
+}
+
+.highlight-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--off-white);
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+.highlight-card h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.highlight-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---- Brands ----
+   A contained, rounded panel (like the Visit Us CTA on category
+   pages) rather than a full-bleed dark band, so it reads as its
+   own element instead of running straight into the footer below. */
+.brands {
+  background: var(--off-white);
+  padding: 64px 0;
+}
+
+.brands-panel {
+  background: var(--maroon);
+  border: 2px solid var(--red);
+  border-radius: 20px;
+  padding: 48px 32px;
+  box-shadow: 0 24px 48px rgba(26,26,26,0.16);
+  text-align: center;
+}
+
+.brands-panel h2 {
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+.brands-sub {
+  color: #d9d9d9;
+  margin: 6px 0 32px;
+}
+
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.brand-list li {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #e9e2df;
+  font-size: 1rem;
 }
 
 /* ---- Page header (About / Deals / Category pages) ---- */
@@ -965,6 +1178,9 @@ a:focus-visible, button:focus-visible {
   .category-grid { grid-template-columns: repeat(2, 1fr); }
   .deals-grid { grid-template-columns: repeat(2, 1fr); }
   .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .stop-in-grid { grid-template-columns: 1fr; }
+  .stop-in-map { aspect-ratio: 16 / 9; }
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
 }
 
 @media (max-width: 700px) {
@@ -1029,7 +1245,10 @@ a:focus-visible, button:focus-visible {
   }
 
   .footer-inner { grid-template-columns: 1fr; }
-  .hero { min-height: 400px; padding-bottom: 40px; }
+  /* Taller than desktop's proportional mobile height would suggest —
+     the added headline needs room below the storefront sign in the
+     photo (~35% down the frame) so it doesn't overlap it. */
+  .hero { min-height: 620px; padding-bottom: 40px; }
   .page-header { padding: 48px 0 40px; }
   .offerings-list { grid-template-columns: 1fr; }
 
@@ -1043,10 +1262,17 @@ a:focus-visible, button:focus-visible {
   .visit-cta-content { max-width: none; }
   .visit-cta-actions { justify-content: center; }
   .visit-cta-card { width: 100%; text-align: left; }
+
+  .this-week-grid { grid-template-columns: 1fr; }
+  .stop-in-content { text-align: center; }
+  .stop-in-actions { justify-content: center; }
+  .brands-panel { padding: 36px 24px; }
+  .brand-list { gap: 10px 22px; }
 }
 
 @media (max-width: 600px) {
   .category-grid { grid-template-columns: 1fr; }
   .deals-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .highlights-grid { grid-template-columns: 1fr; gap: 28px; }
 }

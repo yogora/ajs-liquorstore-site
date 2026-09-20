@@ -9,6 +9,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<!-- LocalBusiness structured data. "image" and "url" are left as
+     site-relative paths since this repo doesn't hardcode a production
+     domain (Netlify-managed) — swap in absolute URLs if a canonical
+     domain is ever pinned down. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LiquorStore",
+  "name": "AJ's Beer, Wine & Spirits",
+  "image": "assets/hero-exterior.png",
+  "url": "index.html",
+  "telephone": "+16189852777",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1207 S Division St",
+    "addressLocality": "Carterville",
+    "addressRegion": "IL",
+    "postalCode": "62918",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "23:00"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -46,9 +74,9 @@
 <main id="main">
 
   <section class="hero" id="top">
-    <h1 class="sr-only">AJ's Beer, Wine &amp; Spirits</h1>
     <div class="wrap hero-inner">
-      <a class="btn btn-primary" href="#specials">Shop In-Store Deals</a>
+      <h1 class="hero-headline">Your Neighborhood Stop for Beer, Wine &amp; Spirits in Carterville</h1>
+      <a class="btn btn-primary" href="#this-week">Shop In-Store Deals</a>
     </div>
   </section>
 
@@ -77,13 +105,144 @@
     </div>
   </section>
 
-  <section class="hours-specials" id="specials">
-    <div class="wrap hs-grid">
-      <div class="hs-card">
-        <img class="special-ad" src="assets/specials/keystone-light-30.jpg" alt="In-Store Special: Keystone Light 30 Pack Cans, $17.99">
+  <!-- ==========================================================
+       THIS WEEK IN THE STORE — 3 teaser cards. Edit deal name,
+       price, and note for each independently, mirroring the deal
+       cards on deals.html. Keep in sync with what's live there.
+       ========================================================== -->
+  <section class="this-week" id="this-week">
+    <div class="wrap">
+      <div class="this-week-header">
+        <h2>This Week In The Store</h2>
+      </div>
+      <div class="this-week-grid">
+
+        <!-- This week card 1 -->
+        <div class="week-card">
+          <h3 class="week-card-name">[Deal Name]</h3>
+          <p class="week-card-price">$[XX.99]</p>
+          <p class="week-card-note">In-store only</p>
+        </div>
+        <!-- End this week card 1 -->
+
+        <!-- This week card 2 -->
+        <div class="week-card">
+          <h3 class="week-card-name">[Deal Name]</h3>
+          <p class="week-card-price">$[XX.99]</p>
+          <p class="week-card-note">In-store only</p>
+        </div>
+        <!-- End this week card 2 -->
+
+        <!-- This week card 3 -->
+        <div class="week-card">
+          <h3 class="week-card-name">[Deal Name]</h3>
+          <p class="week-card-price">$[XX.99]</p>
+          <p class="week-card-note">In-store only</p>
+        </div>
+        <!-- End this week card 3 -->
+
+      </div>
+      <p class="this-week-more"><a href="deals.html">See All Deals →</a></p>
+    </div>
+  </section>
+  <!-- END THIS WEEK IN THE STORE -->
+
+  <!-- ==========================================================
+       STOP IN TODAY — address, hours, and CTAs. Keep the address
+       and hours here in sync with the footer if they ever change.
+       The map placeholder swaps for a real Google Maps embed once
+       the Google Business Profile is verified.
+       ========================================================== -->
+  <section class="stop-in">
+    <div class="wrap stop-in-grid">
+      <div class="stop-in-content">
+        <h2>Stop In Today</h2>
+        <address>1207 S Division St<br>Carterville, IL 62918</address>
+        <p class="stop-in-hours">Monday – Sunday<br>9:00 AM – 11:00 PM</p>
+        <div class="stop-in-actions">
+          <a class="btn btn-primary" href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-ghost-ink" href="tel:6189852777">Call (618) 985-2777</a>
+        </div>
+      </div>
+      <!-- Map placeholder — replace with the Google Maps embed
+           <iframe> once the Google Business Profile is verified. -->
+      <div class="stop-in-map" role="img" aria-label="Map showing AJ's Beer, Wine & Spirits at 1207 S Division St, Carterville, IL">
+        <svg class="stop-in-map-pin" width="28" height="36" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+          <path d="M14 0C6.3 0 0 6.3 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.3 21.7 0 14 0z" fill="currentColor"/>
+          <circle cx="14" cy="14" r="5.5" fill="var(--off-white)"/>
+        </svg>
+        <p class="stop-in-map-note">Google Map embed — 1207 S Division St</p>
       </div>
     </div>
   </section>
+  <!-- END STOP IN TODAY -->
+
+  <!-- ==========================================================
+       HIGHLIGHTS — 4 short brand-attribute cards with icons.
+       ========================================================== -->
+  <section class="highlights">
+    <div class="wrap">
+      <h2 class="highlights-heading">Why Shop AJ's</h2>
+      <div class="highlights-grid">
+
+        <div class="highlight-card">
+          <span class="highlight-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 2h4M10 2v4.5L7 10v9a2 2 0 002 2h6a2 2 0 002-2v-9l-3-3.5V2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Deep Selection</h3>
+          <p>Beer, wine, spirits, and ready-to-drink, with a full lineup in every category.</p>
+        </div>
+
+        <div class="highlight-card">
+          <span class="highlight-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M4.5 6l15 12M19.5 6l-15 12M2 12h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Always Cold</h3>
+          <p>Beer and RTDs stocked cold, every single day.</p>
+        </div>
+
+        <div class="highlight-card">
+          <span class="highlight-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 12h2M20 12h2M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="0.5 3"/></svg>
+          </span>
+          <h3>Lottery &amp; Essentials</h3>
+          <p>Illinois Lottery, ice, mixers, and snacks, all in one stop.</p>
+        </div>
+
+        <div class="highlight-card">
+          <span class="highlight-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-8-5-8-11.2C4 5.9 6.2 4 8.8 4c1.6 0 3 .8 3.2 2.3C12.2 4.8 13.6 4 15.2 4 17.8 4 20 5.9 20 9.3c0 6.2-8 11.2-8 11.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Local &amp; Friendly</h3>
+          <p>Family-run since 2011, proud to be Carterville's neighborhood liquor store.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END HIGHLIGHTS -->
+
+  <!-- ==========================================================
+       BRANDS — swap the brand list as inventory changes.
+       ========================================================== -->
+  <section class="brands">
+    <div class="wrap">
+      <div class="brands-panel">
+        <h2>Brands We Keep In Stock</h2>
+        <p class="brands-sub">A few of the names on our shelves — plus plenty more in store.</p>
+        <ul class="brand-list">
+          <li>Jack Daniel's</li>
+          <li>Tito's Handmade Vodka</li>
+          <li>Crown Royal</li>
+          <li>Bud Light</li>
+          <li>Corona</li>
+          <li>Barefoot</li>
+          <li>High Noon</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- END BRANDS -->
 
 </main>
 

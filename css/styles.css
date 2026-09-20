@@ -9,6 +9,11 @@
   --font-body: "Inter", -apple-system, Segoe UI, sans-serif;
 
   --max-width: 1080px;
+
+  /* Deep oxblood accent — used to give the Visit Us CTA its own
+     identity, distinct from both the cream page background and
+     the black footer it sits above. */
+  --maroon: #2B1114;
 }
 
 * { box-sizing: border-box; }
@@ -744,11 +749,23 @@ a:focus-visible, button:focus-visible {
   z-index: 1;
 }
 
-/* ---- Visit Us CTA (Category pages) ---- */
+/* ---- Visit Us CTA (Category pages) ----
+   A standalone callout, not a second footer: it sits on the page's
+   own cream background with room to breathe on both sides, and the
+   panel itself uses --maroon (not --ink) so it reads as its own
+   element rather than bleeding into the black footer directly below. */
 .visit-cta {
-  background: var(--ink);
+  background: var(--off-white);
+  padding: 64px 0 88px;
+}
+
+.visit-cta-panel {
+  background: var(--maroon);
+  border: 2px solid var(--red);
+  border-radius: 20px;
+  padding: 48px 56px;
+  box-shadow: 0 24px 48px rgba(26,26,26,0.16);
   color: var(--white);
-  padding: 56px 0;
 }
 
 .visit-cta-inner {
@@ -1021,6 +1038,7 @@ a:focus-visible, button:focus-visible {
   .recurring-grid { grid-template-columns: 1fr; }
 
   .breadcrumb-list { justify-content: flex-start; }
+  .visit-cta-panel { padding: 36px 24px; }
   .visit-cta-inner { flex-direction: column; text-align: center; }
   .visit-cta-content { max-width: none; }
   .visit-cta-actions { justify-content: center; }

@@ -1092,46 +1092,43 @@ a:focus-visible, button:focus-visible {
   margin: 8px 0 0;
 }
 
-.about-offerings {
+.about-map {
   padding: 64px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(26,26,26,0.06);
 }
 
-.offerings-inner {
+.about-map-inner {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
 }
 
-.offerings-inner h2 {
+.about-map-inner h2 {
   font-size: 1.4rem;
 }
 
-.offerings-inner > p {
+.about-map-inner > p {
   color: #333;
-  margin-bottom: 28px;
+  margin: 8px 0 0;
 }
 
-.offerings-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  text-align: left;
-}
-
-.offerings-list li {
-  background: var(--white);
+.about-map-embed {
+  margin-top: 24px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
   border: 1px solid rgba(26,26,26,0.08);
-  border-radius: 8px;
-  padding: 16px 18px;
-  color: #333;
 }
 
-.offerings-list strong {
-  color: var(--ink);
-  font-family: var(--font-display);
+.about-map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.about-map-actions {
+  margin-top: 20px;
 }
 
 /* ---- Footer ---- */

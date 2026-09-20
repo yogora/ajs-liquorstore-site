@@ -598,6 +598,216 @@ a:focus-visible, button:focus-visible {
   height: 420px !important;
 }
 
+/* ---- Product pages (Liquor / Beer / Wine / Ready-to-Drink) ---- */
+.breadcrumb {
+  margin: 0 0 16px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: "/";
+  margin-left: 6px;
+  color: #bbb;
+}
+
+.breadcrumb-list a {
+  color: #777;
+  text-decoration: none;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--red);
+}
+
+.breadcrumb-list li[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.jump-nav {
+  padding: 24px 0 48px;
+}
+
+.jump-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jump-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid rgba(26,26,26,0.12);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.jump-pill:hover,
+.jump-pill:focus-visible {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.product-section {
+  padding: 48px 0;
+  border-top: 1px solid rgba(26,26,26,0.06);
+  scroll-margin-top: 90px;
+}
+
+.product-section-intro {
+  max-width: 640px;
+  margin: 0 0 28px;
+}
+
+.product-section-intro h2 {
+  font-size: 1.4rem;
+}
+
+.product-section-intro p {
+  color: #555;
+  margin: 6px 0 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid rgba(26,26,26,0.08);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.product-card-image {
+  aspect-ratio: 3 / 4;
+  background: rgba(26,26,26,0.06);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.product-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin: 0 0 2px;
+}
+
+.product-card-meta {
+  color: #777;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+/* ---- Visit Us CTA (Category pages) ---- */
+.visit-cta {
+  background: var(--ink);
+  color: var(--white);
+  padding: 56px 0;
+}
+
+.visit-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.visit-cta-content {
+  max-width: 560px;
+}
+
+.visit-cta-content h2 {
+  color: var(--white);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+}
+
+.visit-cta-desc {
+  color: #d9d9d9;
+  margin: 8px 0 24px;
+}
+
+.visit-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.visit-cta-card {
+  flex-shrink: 0;
+  min-width: 280px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 28px 32px;
+}
+
+.visit-cta-card h3 {
+  font-family: var(--font-display);
+  color: var(--white);
+  font-size: 1rem;
+  margin: 0 0 14px;
+}
+
+.visit-cta-hours {
+  color: #d9d9d9;
+  margin: 0 0 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.visit-cta-card address {
+  font-style: normal;
+  color: #d9d9d9;
+  margin: 0;
+}
+
 /* ---- Placeholder sections (Category pages) ---- */
 .placeholder-section {
   padding: 64px 0;
@@ -737,6 +947,7 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 860px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); }
   .deals-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 700px) {
@@ -808,9 +1019,16 @@ a:focus-visible, button:focus-visible {
   .dow-card { flex-direction: column; align-items: center; text-align: center; }
   .dow-content { max-width: none; }
   .recurring-grid { grid-template-columns: 1fr; }
+
+  .breadcrumb-list { justify-content: flex-start; }
+  .visit-cta-inner { flex-direction: column; text-align: center; }
+  .visit-cta-content { max-width: none; }
+  .visit-cta-actions { justify-content: center; }
+  .visit-cta-card { width: 100%; text-align: left; }
 }
 
 @media (max-width: 600px) {
   .category-grid { grid-template-columns: 1fr; }
   .deals-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
 }

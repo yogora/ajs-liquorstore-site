@@ -29,12 +29,26 @@
     "postalCode": "62918",
     "addressCountry": "US"
   },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "09:00",
-    "closes": "23:00"
-  }
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+      "opens": "09:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday"],
+      "opens": "11:00",
+      "closes": "21:00"
+    }
+  ]
 }
 </script>
 </head>
@@ -158,7 +172,7 @@
       <div class="stop-in-content">
         <h2>Stop In Today</h2>
         <address>1207 S Division St<br>Carterville, IL 62918</address>
-        <p class="stop-in-hours">Monday – Sunday<br>9:00 AM – 11:00 PM</p>
+        <p class="stop-in-hours">Monday – Thursday: 9:00 AM – 10:00 PM<br>Friday – Saturday: 9:00 AM – 11:00 PM<br>Sunday: 11:00 AM – 9:00 PM</p>
         <div class="stop-in-actions">
           <a class="btn btn-primary" href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">Get Directions</a>
           <a class="btn btn-ghost-ink" href="tel:6189852777">Call (618) 985-2777</a>
@@ -259,7 +273,7 @@
     </div>
     <div class="footer-col">
       <h2>Hours</h2>
-      <p>Monday – Sunday<br>9:00 AM – 11:00 PM</p>
+      <p>Monday – Thursday: 9:00 AM – 10:00 PM<br>Friday – Saturday: 9:00 AM – 11:00 PM<br>Sunday: 11:00 AM – 9:00 PM</p>
     </div>
   </div>
   <div class="wrap">

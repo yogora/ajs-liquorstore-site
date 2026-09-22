@@ -1002,12 +1002,14 @@ a:focus-visible, button:focus-visible {
   color: var(--white);
 }
 
+/* Single centered column — there's no second (hours/address) block
+   anymore, so this no longer needs the two-up space-between layout
+   the panel originally had. */
 .visit-cta-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .visit-cta-content {
@@ -1026,37 +1028,9 @@ a:focus-visible, button:focus-visible {
 
 .visit-cta-actions {
   display: flex;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-}
-
-.visit-cta-card {
-  flex-shrink: 0;
-  min-width: 280px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  padding: 28px 32px;
-}
-
-.visit-cta-card h3 {
-  font-family: var(--font-display);
-  color: var(--white);
-  font-size: 1rem;
-  margin: 0 0 14px;
-}
-
-.visit-cta-hours {
-  color: #d9d9d9;
-  margin: 0 0 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-
-.visit-cta-card address {
-  font-style: normal;
-  color: #d9d9d9;
-  margin: 0;
 }
 
 /* ---- Placeholder sections (Category pages) ---- */
@@ -1277,10 +1251,7 @@ a:focus-visible, button:focus-visible {
 
   .breadcrumb-list { justify-content: flex-start; }
   .visit-cta-panel { padding: 36px 24px; }
-  .visit-cta-inner { flex-direction: column; text-align: center; }
   .visit-cta-content { max-width: none; }
-  .visit-cta-actions { justify-content: center; }
-  .visit-cta-card { width: 100%; text-align: left; }
 
   .this-week-grid { grid-template-columns: 1fr; }
   .stop-in-content { text-align: center; }

@@ -84,59 +84,146 @@
     <div class="wrap">
       <div class="product-section-intro">
         <h2>Domestic</h2>
-        <p>Familiar names and easy-drinking lagers, always stocked and always cold.</p>
+        <p>Familiar names and easy-drinking lagers, in whatever pack size fits your plans.</p>
       </div>
-      <div class="product-grid">
+      <!-- MOCKUP: multi-pack card layout (.product-grid--packs / .product-card--packs)
+           — three package-size slots per card instead of one photo + one size line.
+           Scoped to this section only pending review; not yet part of the standard
+           product-card pattern documented in CLAUDE.md. -->
+      <div class="product-grid product-grid--packs">
 
         <!-- Product card: Domestic 1 -->
-        <div class="product-card">
-          <div class="product-card-image">
-            <img src="assets/products/domestic-budweiser-12pk-cans.jpg" alt="Budweiser American Lager, 12-pack cans" loading="lazy">
+        <div class="product-card product-card--packs">
+          <h3 class="product-card-name">Michelob Ultra</h3>
+          <p class="product-card-meta">American Light Lager</p>
+          <div class="product-pack-row">
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-michelob-ultra-12pk-cans.jpg" alt="Michelob Ultra, 12-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">12-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-michelob-ultra-18pk-cans.jpg" alt="Michelob Ultra, 18-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">18-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-michelob-ultra-30pk-cans.jpg" alt="Michelob Ultra, 30-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">30-pack</p>
+            </div>
           </div>
-          <h3 class="product-card-name">Budweiser</h3>
-          <p class="product-card-meta">American Lager &middot; 12-pack Cans</p>
         </div>
         <!-- End product card: Domestic 1 -->
 
         <!-- Product card: Domestic 2 -->
-        <div class="product-card">
-          <span class="product-badge">Everyday Value</span>
-          <div class="product-card-image">
-            <img src="assets/products/domestic-bud-light-12pk-cans.jpg" alt="Bud Light American Light Lager, 12-pack cans" loading="lazy">
-          </div>
+        <div class="product-card product-card--packs">
           <h3 class="product-card-name">Bud Light</h3>
-          <p class="product-card-meta">American Light Lager &middot; 12-pack Cans</p>
+          <p class="product-card-meta">American Light Lager</p>
+          <div class="product-pack-row">
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-bud-light-12pk-cans.jpg" alt="Bud Light, 12-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">12-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-bud-light-18pk-cans.jpg" alt="Bud Light, 18-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">18-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-bud-light-30pk-cans.jpg" alt="Bud Light, 30-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">30-pack</p>
+            </div>
+          </div>
         </div>
         <!-- End product card: Domestic 2 -->
 
         <!-- Product card: Domestic 3 -->
-        <div class="product-card">
-          <span class="product-badge">Staff Pick</span>
-          <div class="product-card-image">
-            <img src="assets/products/domestic-miller-lite-12pk-cans.jpg" alt="Miller Lite American Light Lager, 12-pack cans" loading="lazy">
-          </div>
+        <div class="product-card product-card--packs">
           <h3 class="product-card-name">Miller Lite</h3>
-          <p class="product-card-meta">American Light Lager &middot; 12-pack Cans</p>
+          <p class="product-card-meta">American Light Lager</p>
+          <div class="product-pack-row">
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-miller-lite-12pk-cans.jpg" alt="Miller Lite, 12-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">12-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-miller-lite-18pk-cans.jpg" alt="Miller Lite, 18-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">18-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-miller-lite-30pk-cans.jpg" alt="Miller Lite, 30-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">30-pack</p>
+            </div>
+          </div>
         </div>
         <!-- End product card: Domestic 3 -->
 
         <!-- Product card: Domestic 4 -->
-        <div class="product-card">
-          <div class="product-card-image">
-            <img src="assets/products/domestic-coors-light-12pk-cans.jpg" alt="Coors Light American Light Lager, 12-pack cans" loading="lazy">
-          </div>
+        <div class="product-card product-card--packs">
           <h3 class="product-card-name">Coors Light</h3>
-          <p class="product-card-meta">American Light Lager &middot; 12-pack Cans</p>
+          <p class="product-card-meta">American Light Lager</p>
+          <div class="product-pack-row">
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-coors-light-12pk-cans.jpg" alt="Coors Light, 12-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">12-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-coors-light-18pk-cans.jpg" alt="Coors Light, 18-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">18-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-coors-light-30pk-cans.jpg" alt="Coors Light, 30-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">30-pack</p>
+            </div>
+          </div>
         </div>
         <!-- End product card: Domestic 4 -->
 
         <!-- Product card: Domestic 5 -->
-        <div class="product-card">
-          <div class="product-card-image">
-            <img src="assets/products/domestic-keystone-light-30pk-cans.jpg" alt="Keystone Light American Light Lager, 30-pack cans" loading="lazy">
+        <div class="product-card product-card--packs">
+          <h3 class="product-card-name">Busch Light</h3>
+          <p class="product-card-meta">American Light Lager</p>
+          <div class="product-pack-row">
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-busch-light-12pk-cans.jpg" alt="Busch Light, 12-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">12-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-busch-light-18pk-cans.jpg" alt="Busch Light, 18-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">18-pack</p>
+            </div>
+            <div class="product-pack">
+              <div class="product-pack-image">
+                <img src="assets/products/domestic-busch-light-30pk-cans.jpg" alt="Busch Light, 30-pack cans" loading="lazy">
+              </div>
+              <p class="product-pack-size">30-pack</p>
+            </div>
           </div>
-          <h3 class="product-card-name">Keystone Light</h3>
-          <p class="product-card-meta">American Light Lager &middot; 30-pack Cans</p>
         </div>
         <!-- End product card: Domestic 5 -->
 

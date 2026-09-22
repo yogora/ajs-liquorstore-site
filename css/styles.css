@@ -962,6 +962,67 @@ a:focus-visible, button:focus-visible {
   z-index: 1;
 }
 
+/* ---- Multi-pack product cards (MOCKUP — Beer / Domestic) ----
+   Trades the single photo + one size line for three package-size
+   slots per card, so a product's 12/18/30-pack options are all
+   visible at once without any click-to-swap JS. Scoped to
+   .product-grid--packs / .product-card--packs so it only affects
+   the section(s) opted into it — not yet folded into the standard
+   .product-card pattern pending review. Needs wider cards than the
+   default 5-across grid, hence the column-count overrides below. */
+.product-grid.product-grid--packs {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-card--packs {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card--packs .product-card-name {
+  margin: 0 0 2px;
+}
+
+.product-card--packs .product-card-meta {
+  margin: 0 0 14px;
+}
+
+/* Upside-down triangle: 2 packs on the top row, 1 centered below.
+   Each pack is sized to half the row width, so the wrap after the
+   2nd item naturally drops the 3rd to its own centered line. */
+.product-pack-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-pack {
+  flex: 0 0 calc(50% - 5px);
+  max-width: calc(50% - 5px);
+  text-align: center;
+}
+
+.product-pack-image {
+  aspect-ratio: 3 / 4;
+  background: rgba(26,26,26,0.06);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.product-pack-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-pack-size {
+  margin: 6px 0 0;
+  color: #777;
+  font-size: 0.75rem;
+}
+
 /* ---- Visit Us CTA (Category pages) ----
    A standalone callout, not a second footer: it sits on the page's
    own cream background with room to breathe on both sides, and the
@@ -1175,6 +1236,7 @@ a:focus-visible, button:focus-visible {
   .category-grid { grid-template-columns: repeat(2, 1fr); }
   .deals-grid { grid-template-columns: repeat(2, 1fr); }
   .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .product-grid.product-grid--packs { grid-template-columns: repeat(2, 1fr); }
   .stop-in-grid { grid-template-columns: 1fr; }
   .stop-in-map { aspect-ratio: 16 / 9; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
@@ -1271,5 +1333,6 @@ a:focus-visible, button:focus-visible {
   .category-grid { grid-template-columns: 1fr; }
   .deals-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-grid.product-grid--packs { grid-template-columns: 1fr; }
   .highlights-grid { grid-template-columns: 1fr; gap: 28px; }
 }

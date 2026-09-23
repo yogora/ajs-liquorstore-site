@@ -319,13 +319,12 @@ a:focus-visible, button:focus-visible {
 
 .category-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 32px 20px;
+  justify-content: center;
+  padding: 22px 12px;
   background: var(--white);
-  border: 1px solid rgba(26,26,26,0.08);
-  border-radius: 10px;
+  border: 2px solid var(--red);
+  border-radius: 14px;
   text-align: center;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -339,22 +338,8 @@ a:focus-visible, button:focus-visible {
 .category-card h3 {
   font-family: var(--font-display);
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin: 0;
-}
-
-.category-card p {
-  color: #555;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.category-card .card-link {
-  margin-top: 6px;
-  color: var(--red);
-  font-weight: 600;
-  font-size: 0.9rem;
-  font-family: var(--font-display);
 }
 
 /* ---- This Week In The Store ---- */
@@ -1261,7 +1246,9 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (max-width: 600px) {
-  .category-grid { grid-template-columns: 1fr; }
+  /* Stay at 2 columns (not 1fr) so the compact tiles form a 2x2
+     grid instead of a tall single-column stack on small phones. */
+  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .deals-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .highlights-grid { grid-template-columns: 1fr; gap: 28px; }

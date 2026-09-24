@@ -358,8 +358,10 @@ a:focus-visible, button:focus-visible {
 
 .category-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   padding: 22px 12px;
   background: var(--white);
   border: 2px solid var(--red);
@@ -379,6 +381,14 @@ a:focus-visible, button:focus-visible {
   color: var(--ink);
   font-size: 1.05rem;
   margin: 0;
+}
+
+.category-card-browse {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--red);
 }
 
 /* ---- This Week In The Store ---- */

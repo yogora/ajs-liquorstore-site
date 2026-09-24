@@ -418,29 +418,33 @@ a:focus-visible, button:focus-visible {
 .week-card {
   background: var(--off-white);
   border-radius: 14px;
-  padding: 28px 24px;
+  padding: 32px 24px;
   text-align: center;
 }
 
-.week-card-name {
+.week-card-brand {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-weight: 800;
+  font-size: 1.4rem;
   color: var(--ink);
-  margin: 0 0 8px;
+  margin: 0 0 4px;
+}
+
+.week-card-size {
+  color: #777;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 18px;
 }
 
 .week-card-price {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: var(--red);
   margin: 0;
-}
-
-.week-card-note {
-  color: #777;
-  font-size: 0.85rem;
-  margin: 6px 0 0;
 }
 
 .this-week-more {

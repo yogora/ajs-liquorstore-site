@@ -229,28 +229,38 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ---- Hero ---- */
+/* The storefront sign sits in a fixed vertical band of the photo
+   (see background-position below), so the H1 and CTA are split to
+   the top and bottom of the box — via .hero-inner's own column flex
+   — instead of stacked together, so neither ever overlaps the sign.
+   Two gradients (top-down for the headline, bottom-up for the
+   button) keep both readable while leaving the sign itself clear. */
 .hero {
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  min-height: 480px;
-  padding-bottom: 56px;
+  min-height: 440px;
   text-align: center;
-  /* Gradient sits on top of the photo so the H1 stays readable
-     against whatever is behind it at the bottom of the frame. */
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0) 60%), url("../assets/hero-exterior.png") 35% 35% / cover no-repeat;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0) 28%),
+    linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 38%),
+    url("../assets/hero-exterior.png") 31% 18% / cover no-repeat;
 }
 
 .hero-inner {
   max-width: 640px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 24px 40px;
 }
 
 .hero-headline {
   color: var(--white);
-  font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   text-shadow: 0 2px 12px rgba(0,0,0,0.45);
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 .sr-only {
@@ -1291,10 +1301,6 @@ a:focus-visible, button:focus-visible {
   }
 
   .footer-inner { grid-template-columns: 1fr; }
-  /* Taller than desktop's proportional mobile height would suggest —
-     the added headline needs room below the storefront sign in the
-     photo (~35% down the frame) so it doesn't overlap it. */
-  .hero { min-height: 620px; padding-bottom: 40px; }
   .page-header { padding: 48px 0 40px; }
   .page-header-callout { padding: 16px 20px; text-align: center; }
 

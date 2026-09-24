@@ -594,7 +594,7 @@ a:focus-visible, button:focus-visible {
   font-size: 1rem;
 }
 
-/* ---- Page header (About / Deals / Category pages) ---- */
+/* ---- Page header (Visit Us / Specials / Category pages) ---- */
 .page-header {
   background: var(--white);
   padding: 72px 0 56px;
@@ -633,7 +633,7 @@ a:focus-visible, button:focus-visible {
   margin: 0;
 }
 
-/* ---- Deals page ---- */
+/* ---- Specials page ---- */
 .legal-strip {
   background: var(--ink);
   color: #cfcfcf;
@@ -642,95 +642,23 @@ a:focus-visible, button:focus-visible {
   padding: 10px 24px;
 }
 
-.deal-of-week {
-  padding: 48px 0 32px;
+.on-sale {
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(26,26,26,0.06);
 }
 
-.dow-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  background: var(--ink);
-  color: var(--white);
-  border-radius: 12px;
-  padding: 40px;
-}
-
-.dow-content {
-  max-width: 560px;
-}
-
-.dow-badge {
-  display: inline-block;
-  color: var(--red);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.dow-name {
-  color: var(--white);
-  font-size: 1.75rem;
-  margin: 0 0 8px;
-}
-
-.dow-desc {
-  color: #d9d9d9;
-  margin: 0 0 20px;
-}
-
-.dow-price-row {
-  margin: 0;
-}
-
-.dow-price {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--red);
-}
-
-.dow-price-old {
-  font-size: 1.2rem;
-  color: #8a8a8a;
-  text-decoration: line-through;
-  margin-left: 10px;
-}
-
-.dow-image {
-  flex-shrink: 0;
-  width: 200px;
-  height: 200px;
-  border: 2px dashed rgba(255,255,255,0.25);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.4);
-  font-size: 0.85rem;
-  text-align: center;
-}
-
-.deals-more {
-  padding: 16px 0 48px;
-}
-
-.deals-more h2 {
+.on-sale h2 {
   font-size: 1.3rem;
   margin-bottom: 20px;
 }
 
-.deals-grid {
+.on-sale-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.deal-card {
+.on-sale-card {
   position: relative;
   background: var(--white);
   border: 1px solid rgba(26,26,26,0.08);
@@ -738,7 +666,7 @@ a:focus-visible, button:focus-visible {
   padding: 16px;
 }
 
-.deal-badge {
+.on-sale-badge {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -752,7 +680,7 @@ a:focus-visible, button:focus-visible {
   border-radius: 999px;
 }
 
-.deal-image {
+.on-sale-image {
   aspect-ratio: 1 / 1;
   border: 1px dashed rgba(26,26,26,0.15);
   border-radius: 6px;
@@ -765,50 +693,57 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 14px;
 }
 
-.deal-name {
+.on-sale-name {
   font-family: var(--font-display);
   font-size: 1.05rem;
   margin: 0 0 2px;
 }
 
-.deal-meta {
+.on-sale-meta {
   color: #777;
   font-size: 0.85rem;
   margin: 0 0 8px;
 }
 
-.deal-price-row {
+.on-sale-price-row {
   margin: 0;
 }
 
-.deal-price {
+.on-sale-price {
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--red);
   font-size: 1.1rem;
 }
 
-.deal-price-old {
+.on-sale-price-old {
   color: #999;
   text-decoration: line-through;
   font-size: 0.9rem;
   margin-left: 4px;
 }
 
-.deal-price-note {
+.on-sale-price-note {
   color: #777;
   font-size: 0.85rem;
   margin-left: 4px;
 }
 
-.deal-note {
+.on-sale-note {
   color: #888;
   font-size: 0.8rem;
   margin: 8px 0 0;
 }
 
+/* A subsection within .on-sale for ongoing, no-end-date discounts —
+   not a separate top-level section of its own. */
 .recurring-specials {
-  padding: 0 0 64px;
+  margin-top: 40px;
+}
+
+.recurring-specials-heading {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
 }
 
 .recurring-grid {
@@ -837,18 +772,33 @@ a:focus-visible, button:focus-visible {
   font-size: 0.95rem;
 }
 
+.new-arrivals {
+  padding: 48px 0 64px;
+}
+
+.new-arrivals h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.new-arrivals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
 /* Cream section + contained, red-bordered panel (same technique as
    .visit-cta / .brands-panel) so the signup reads as its own element
    instead of running straight into the black footer below. The panel
    is --ink (not --maroon) because the Zite form paints its own dark
    background — matching it keeps the form seamless inside the box. */
-.deal-alert {
+.special-alert {
   background: var(--off-white);
   padding: 0 0 88px;
   text-align: center;
 }
 
-.deal-alert-panel {
+.special-alert-panel {
   max-width: 560px;
   margin: 0 auto;
   background: var(--ink);
@@ -859,7 +809,7 @@ a:focus-visible, button:focus-visible {
   color: var(--white);
 }
 
-.deal-alert-embed {
+.special-alert-embed {
   max-width: 480px;
   margin: 0 auto;
 }
@@ -873,7 +823,7 @@ a:focus-visible, button:focus-visible {
    "+ Add your name" reveals First/Last Name fields (~90px taller),
    and anything under ~450px makes the iframe scroll at that point.
    Adjust this value if the form ever grows or shrinks. */
-.deal-alert-embed > div {
+.special-alert-embed > div {
   height: 450px !important;
 }
 
@@ -1309,7 +1259,8 @@ a:focus-visible, button:focus-visible {
 /* ---- Responsive ---- */
 @media (max-width: 860px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); }
-  .deals-grid { grid-template-columns: repeat(2, 1fr); }
+  .on-sale-grid { grid-template-columns: repeat(2, 1fr); }
+  .new-arrivals-grid { grid-template-columns: repeat(2, 1fr); }
   .product-grid { grid-template-columns: repeat(3, 1fr); }
   .stop-in-grid { grid-template-columns: 1fr; }
   .stop-in-map { aspect-ratio: 16 / 9; }
@@ -1401,8 +1352,6 @@ a:focus-visible, button:focus-visible {
   .page-header { padding: 48px 0 40px; }
   .page-header-callout { padding: 16px 20px; text-align: center; }
 
-  .dow-card { flex-direction: column; align-items: center; text-align: center; }
-  .dow-content { max-width: none; }
   .recurring-grid { grid-template-columns: 1fr; }
 
   .breadcrumb-list { justify-content: flex-start; }
@@ -1413,11 +1362,11 @@ a:focus-visible, button:focus-visible {
   .stop-in-content { text-align: center; }
   .stop-in-actions { justify-content: center; }
   .brands-panel { padding: 36px 24px; }
-  .deal-alert-panel { padding: 16px 12px; }
+  .special-alert-panel { padding: 16px 12px; }
   /* Narrower form wraps its text onto more lines, so it needs more
      height than desktop's 450px (again sized for the expanded
      "+ Add your name" state) before the iframe starts scrolling. */
-  .deal-alert-embed > div { height: 540px !important; }
+  .special-alert-embed > div { height: 540px !important; }
   .brand-list { gap: 10px 22px; }
 }
 
@@ -1425,7 +1374,8 @@ a:focus-visible, button:focus-visible {
   /* Stay at 2 columns (not 1fr) so the compact tiles form a 2x2
      grid instead of a tall single-column stack on small phones. */
   .category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .deals-grid { grid-template-columns: 1fr; }
+  .on-sale-grid { grid-template-columns: 1fr; }
+  .new-arrivals-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .highlights-grid { grid-template-columns: 1fr; gap: 28px; }
 }

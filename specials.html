@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specials &amp; New Arrivals — AJ's Beer, Wine &amp; Spirits</title>
+<meta name="description" content="Current sale prices on beer, wine, and spirits, plus what just hit the shelves at AJ's Beer, Wine & Spirits in Carterville, IL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Live open/closed status, filled in by js/store-hours.js. The
+     text below is the no-JS fallback. -->
+<div class="store-status-strip">
+  <div class="wrap">
+    <p class="store-status" id="store-status">See today's hours &amp; get directions on our <a href="visit-us.html">Visit Us</a> page.</p>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/ajs-logo.png" alt="AJ's Beer, Wine & Spirits" class="brand-logo">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+    <label for="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="site-nav" aria-label="Primary">
+      <details class="nav-dropdown">
+        <summary class="nav-dropdown-toggle">
+          Products
+          <svg class="nav-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="nav-dropdown-menu">
+          <a href="spirits.html">Spirits</a>
+          <a href="beer.html">Beer</a>
+          <a href="ready-to-drink.html">Ready-to-Drink</a>
+          <a href="wine.html">Wine</a>
+        </div>
+      </details>
+      <a href="specials.html" aria-current="page">Specials</a>
+      <a href="visit-us.html">Visit Us</a>
+      <a class="btn btn-primary nav-directions-btn" href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">Get Directions</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Legal / age disclaimer strip -->
+<div class="legal-strip">
+  <div class="wrap">
+    <p>Must be 21+ to purchase alcohol &middot; Prices and promotions valid while supplies last — see store for full details</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="wrap">
+      <h1>Specials &amp; New Arrivals</h1>
+      <p class="page-header-sub">Current sale prices on beer, wine, and spirits, plus what just hit the shelves — all here at AJ's in Carterville.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       ON SALE — discounted products. Kept plain and scannable: one
+       grid of cards, each wrapped in its own comment block below so
+       the site owner can find and swap products easily. The
+       "Standing Weekly Specials" list further down covers ongoing,
+       no-end-date discounts (Wine Wednesday, etc.) separately from
+       the dated cards in the grid above it.
+       ========================================================== -->
+  <section class="on-sale" id="on-sale">
+    <div class="wrap">
+      <h2>On Sale</h2>
+      <div class="on-sale-grid">
+
+        <!-- On sale card 1: Spirits -->
+        <div class="on-sale-card">
+          <span class="on-sale-badge">20% Off</span>
+          <div class="on-sale-image">Product photo</div>
+          <h3 class="on-sale-name">[Spirit Name]</h3>
+          <p class="on-sale-meta">Spirits &middot; 750ml</p>
+          <p class="on-sale-price-row">
+            <span class="on-sale-price">$[XX.99]</span>
+            <span class="on-sale-price-old">$[XX.99]</span>
+          </p>
+          <p class="on-sale-note">Ends [date] &middot; While supplies last</p>
+        </div>
+        <!-- End on sale card 1 -->
+
+        <!-- On sale card 2: Wine -->
+        <div class="on-sale-card">
+          <span class="on-sale-badge">Buy 2 Get 1</span>
+          <div class="on-sale-image">Product photo</div>
+          <h3 class="on-sale-name">[Wine Name]</h3>
+          <p class="on-sale-meta">Wine &middot; 750ml</p>
+          <p class="on-sale-price-row">
+            <span class="on-sale-price">$[XX.99]</span>
+            <span class="on-sale-price-note">each, mix &amp; match</span>
+          </p>
+          <p class="on-sale-note">Ends [date] &middot; While supplies last</p>
+        </div>
+        <!-- End on sale card 2 -->
+
+        <!-- On sale card 3: Beer -->
+        <div class="on-sale-card">
+          <span class="on-sale-badge">$3 Off</span>
+          <div class="on-sale-image">Product photo</div>
+          <h3 class="on-sale-name">[Beer Name]</h3>
+          <p class="on-sale-meta">Beer &middot; 12-pack</p>
+          <p class="on-sale-price-row">
+            <span class="on-sale-price">$[XX.99]</span>
+            <span class="on-sale-price-old">$[XX.99]</span>
+          </p>
+          <p class="on-sale-note">Ends [date] &middot; While supplies last</p>
+        </div>
+        <!-- End on sale card 3 -->
+
+        <!-- On sale card 4: Ready-to-Drink -->
+        <div class="on-sale-card">
+          <span class="on-sale-badge">15% Off</span>
+          <div class="on-sale-image">Product photo</div>
+          <h3 class="on-sale-name">[RTD Cocktail Name]</h3>
+          <p class="on-sale-meta">Ready-to-Drink &middot; 4-pack</p>
+          <p class="on-sale-price-row">
+            <span class="on-sale-price">$[XX.99]</span>
+            <span class="on-sale-price-old">$[XX.99]</span>
+          </p>
+          <p class="on-sale-note">Ends [date] &middot; While supplies last</p>
+        </div>
+        <!-- End on sale card 4 -->
+
+        <!-- On sale card 5: Mixers -->
+        <div class="on-sale-card">
+          <span class="on-sale-badge">2 for $[X]</span>
+          <div class="on-sale-image">Product photo</div>
+          <h3 class="on-sale-name">[Mixer Name]</h3>
+          <p class="on-sale-meta">Mixers &middot; 1L</p>
+          <p class="on-sale-price-row">
+            <span class="on-sale-price">$[X.99]</span>
+            <span class="on-sale-price-note">for two</span>
+          </p>
+          <p class="on-sale-note">Ends [date] &middot; While supplies last</p>
+        </div>
+        <!-- End on sale card 5 -->
+
+        <!-- On sale card 6: Spirits #2 -->
+        <div class="on-sale-card">
+          <span class="on-sale-badge">$5 Off</span>
+          <div class="on-sale-image">Product photo</div>
+          <h3 class="on-sale-name">[Spirit Name #2]</h3>
+          <p class="on-sale-meta">Spirits &middot; 750ml</p>
+          <p class="on-sale-price-row">
+            <span class="on-sale-price">$[XX.99]</span>
+            <span class="on-sale-price-old">$[XX.99]</span>
+          </p>
+          <p class="on-sale-note">Ends [date] &middot; While supplies last</p>
+        </div>
+        <!-- End on sale card 6 -->
+
+      </div>
+
+      <!-- ==========================================================
+           STANDING WEEKLY SPECIALS — no end date. Edit the day and
+           discount copy in each card.
+           ========================================================== -->
+      <div class="recurring-specials">
+        <h3 class="recurring-specials-heading">Standing Weekly Specials</h3>
+        <div class="recurring-grid">
+
+          <!-- Recurring special 1 -->
+          <div class="recurring-card">
+            <h3>Wine Wednesday</h3>
+            <p>10% off every bottle of wine in the store, every Wednesday.</p>
+          </div>
+
+          <!-- Recurring special 2 -->
+          <div class="recurring-card">
+            <h3>Weekend Beer Run</h3>
+            <p>Mix &amp; match any 6-packs, [X] for $[XX], Friday through Sunday.</p>
+          </div>
+
+        </div>
+      </div>
+      <!-- END STANDING WEEKLY SPECIALS -->
+
+    </div>
+  </section>
+  <!-- END ON SALE -->
+
+  <!-- ==========================================================
+       STAFF PICKS — hidden for now, on purpose (only turn this on
+       once staff are actually choosing the items; otherwise it reads
+       as generic "Featured" dressed up). When ready: add a section
+       here between On Sale and New Arrivals, id="staff-picks",
+       reusing .product-card exactly like New Arrivals below with a
+       "Staff Pick" .product-badge on each card.
+       ========================================================== -->
+
+  <!-- ==========================================================
+       NEW ARRIVALS — reuses the same .product-card component as the
+       product category pages (see CLAUDE.md), each wrapped in its
+       own comment block so products are easy to swap. No pricing
+       field, matching that convention.
+       ========================================================== -->
+  <section class="new-arrivals" id="new-arrivals">
+    <div class="wrap">
+      <h2>New Arrivals</h2>
+      <div class="new-arrivals-grid">
+
+        <!-- New arrival card 1: Spirits -->
+        <div class="product-card">
+          <span class="product-badge">New Arrival</span>
+          <div class="product-card-image">
+            <img src="assets/products/new-arrival-1.jpg" alt="[Spirit Name] photo" loading="lazy">
+          </div>
+          <h3 class="product-card-name">[Spirit Name]</h3>
+          <p class="product-card-meta">Spirits &middot; 750ml</p>
+        </div>
+        <!-- End new arrival card 1 -->
+
+        <!-- New arrival card 2: Wine -->
+        <div class="product-card">
+          <span class="product-badge">New Arrival</span>
+          <div class="product-card-image">
+            <img src="assets/products/new-arrival-2.jpg" alt="[Wine Name] photo" loading="lazy">
+          </div>
+          <h3 class="product-card-name">[Wine Name]</h3>
+          <p class="product-card-meta">Wine &middot; 750ml</p>
+        </div>
+        <!-- End new arrival card 2 -->
+
+        <!-- New arrival card 3: Beer -->
+        <div class="product-card">
+          <span class="product-badge">New Arrival</span>
+          <div class="product-card-image">
+            <img src="assets/products/new-arrival-3.jpg" alt="[Beer Name] photo" loading="lazy">
+          </div>
+          <h3 class="product-card-name">[Beer Name]</h3>
+          <p class="product-card-meta">Beer &middot; 6-pack</p>
+        </div>
+        <!-- End new arrival card 3 -->
+
+        <!-- New arrival card 4: Ready-to-Drink -->
+        <div class="product-card">
+          <span class="product-badge">New Arrival</span>
+          <div class="product-card-image">
+            <img src="assets/products/new-arrival-4.jpg" alt="[RTD Cocktail Name] photo" loading="lazy">
+          </div>
+          <h3 class="product-card-name">[RTD Cocktail Name]</h3>
+          <p class="product-card-meta">Ready-to-Drink &middot; 4-pack</p>
+        </div>
+        <!-- End new arrival card 4 -->
+
+      </div>
+    </div>
+  </section>
+  <!-- END NEW ARRIVALS -->
+
+  <!-- ==========================================================
+       SPECIAL ALERT SIGNUP — Zite embed. The Zite form already
+       includes its own "Never Miss A Deal" heading and subcopy
+       (generated externally, so it still says "Deal" even though the
+       rest of the site now says "Specials" — see CLAUDE.md's
+       Third-party embed note before touching this snippet), so this
+       section has no text of its own — do not modify the snippet
+       inside .special-alert-embed.
+       ========================================================== -->
+  <section class="special-alert">
+    <div class="wrap">
+      <div class="special-alert-panel">
+        <div class="special-alert-embed">
+          <div style="width:100%;height:700px;" data-zite-id="uqk9ijddp8" data-zite-embed-type="standard" data-zite-inherit-parameters></div>
+          <script src="https://server.fillout.com/embed/v2-zite/"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END SPECIAL ALERT SIGNUP -->
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-col">
+      <h2>Location</h2>
+      <address>
+        1207 S Division St<br>
+        Carterville, IL 62918
+      </address>
+      <p><a href="tel:6189852777">(618) 985-2777</a></p>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+    <div class="footer-col">
+      <h2>Hours</h2>
+      <p>Monday – Thursday: 9:00 AM – 10:00 PM<br>Friday – Saturday: 9:00 AM – 11:00 PM<br>Sunday: 11:00 AM – 9:00 PM</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="footer-note">Please drink responsibly. Must be 21+ to purchase. Promotions subject to change and while supplies last. See store for current pricing.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile action bar — hidden above 700px, where the header's
+     nav and Get Directions button already cover the same needs. -->
+<nav class="mobile-action-bar" aria-label="Quick actions">
+  <a href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">
+    <svg width="18" height="22" viewBox="0 0 28 36" fill="none" aria-hidden="true"><path d="M14 0C6.3 0 0 6.3 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.3 21.7 0 14 0z" fill="currentColor"/><circle cx="14" cy="14" r="5.5" fill="var(--ink)"/></svg>
+    Directions
+  </a>
+  <a href="tel:6189852777">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    Call
+  </a>
+  <a href="visit-us.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Hours
+  </a>
+</nav>
+
+<script src="js/store-hours.js" defer></script>
+
+</body>
+</html>

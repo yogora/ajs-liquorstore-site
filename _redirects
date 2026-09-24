@@ -1,2 +1,5 @@
 # About was folded into Visit Us — send the old URL there instead of a 404.
 /about.html  /visit-us.html  301
+
+# Deals was renamed to Specials — send the old URL there instead of a 404.
+/deals.html  /specials.html  301

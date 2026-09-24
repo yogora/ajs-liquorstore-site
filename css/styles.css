@@ -1033,9 +1033,14 @@ a:focus-visible, button:focus-visible {
   color: #444;
 }
 
-/* ---- About page ---- */
+/* ---- About page ----
+   The header (h1/subheading), intro text, and gallery share one
+   white background with tight padding between them, rather than
+   the header handing off to a separate cream-colored section
+   below — keeps the whole top of the page reading as one block. */
 .about-overview {
-  padding: 64px 0;
+  background: var(--white);
+  padding: 0 0 40px;
 }
 
 .about-inner {
@@ -1043,12 +1048,22 @@ a:focus-visible, button:focus-visible {
   margin: 0 auto;
 }
 
+.about-divider {
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 0 auto 28px;
+  background: var(--red);
+  border-radius: 999px;
+}
+
 .about-inner p {
   color: #333;
 }
 
 .about-gallery {
-  padding: 0 0 64px;
+  background: var(--white);
+  padding: 0 0 56px;
 }
 
 .about-gallery-feature {

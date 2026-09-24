@@ -802,10 +802,26 @@ a:focus-visible, button:focus-visible {
   font-size: 0.95rem;
 }
 
+/* Cream section + contained, red-bordered panel (same technique as
+   .visit-cta / .brands-panel) so the signup reads as its own element
+   instead of running straight into the black footer below. The panel
+   is --ink (not --maroon) because the Zite form paints its own dark
+   background — matching it keeps the form seamless inside the box. */
 .deal-alert {
-  background: var(--ink);
-  padding: 64px 0;
+  background: var(--off-white);
+  padding: 0 0 88px;
   text-align: center;
+}
+
+.deal-alert-panel {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--ink);
+  border: 2px solid var(--red);
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 24px 48px rgba(26,26,26,0.16);
+  color: var(--white);
 }
 
 .deal-alert-embed {
@@ -816,10 +832,13 @@ a:focus-visible, button:focus-visible {
 /* The Zite snippet hardcodes height:700px on its container via an
    inline style, which is much taller than this short form actually
    needs. Override it here (rather than editing the snippet itself)
-   to remove the excess blank space. Adjust this value if the form
-   ever grows or shrinks. */
+   to remove the excess blank space — the form centers itself
+   vertically in this height, so any surplus shows up as dead space
+   above the headline. 350px is about the minimum before the iframe
+   starts scrolling. Adjust this value if the form ever grows or
+   shrinks. */
 .deal-alert-embed > div {
-  height: 420px !important;
+  height: 350px !important;
 }
 
 /* ---- Product pages (Spirits / Beer / Wine / Ready-to-Drink) ---- */
@@ -1290,6 +1309,10 @@ a:focus-visible, button:focus-visible {
   .stop-in-content { text-align: center; }
   .stop-in-actions { justify-content: center; }
   .brands-panel { padding: 36px 24px; }
+  .deal-alert-panel { padding: 16px 12px; }
+  /* Narrower form wraps its text onto more lines, so it needs more
+     height than desktop's 350px before the iframe starts scrolling. */
+  .deal-alert-embed > div { height: 440px !important; }
   .brand-list { gap: 10px 22px; }
 }
 

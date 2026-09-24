@@ -642,9 +642,131 @@ a:focus-visible, button:focus-visible {
   padding: 10px 24px;
 }
 
-.on-sale {
+/* New Arrivals comes first on the Specials page. */
+.new-arrivals {
   padding: 48px 0;
   border-bottom: 1px solid rgba(26,26,26,0.06);
+}
+
+.new-arrivals h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* Used once there are several new arrivals at once — a grid of the
+   same .product-card the category pages use. */
+.new-arrivals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Full-width spotlight card for a single new arrival: image left,
+   story right. Stacks at 700px. */
+.arrival-feature {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) 3fr;
+  background: var(--white);
+  border: 2px solid var(--red);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* White (not the grey .product-card-image fallback) so white-backdrop
+   bottle shots blend into the card instead of showing as a box.
+   object-fit: contain (not cover) so a bottle shot is never cropped. */
+.arrival-feature-image {
+  background: var(--white);
+  min-height: 320px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrival-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 460px;
+  object-fit: contain;
+}
+
+.arrival-feature-body {
+  padding: 32px 36px;
+}
+
+.arrival-feature-badge {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.arrival-feature-name {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+  margin: 0 0 4px;
+}
+
+.arrival-feature-meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0 0 16px;
+}
+
+.arrival-feature-desc {
+  color: #333;
+  margin: 0 0 20px;
+}
+
+.arrival-feature-notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0 0 24px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(26,26,26,0.08);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+}
+
+.arrival-feature-notes dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 2px;
+}
+
+.arrival-feature-notes dd {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.45;
+}
+
+.arrival-feature-price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--red);
+  font-size: 1.8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.on-sale {
+  padding: 48px 0 64px;
 }
 
 .on-sale h2 {
@@ -735,57 +857,6 @@ a:focus-visible, button:focus-visible {
   margin: 8px 0 0;
 }
 
-/* A subsection within .on-sale for ongoing, no-end-date discounts —
-   not a separate top-level section of its own. */
-.recurring-specials {
-  margin-top: 40px;
-}
-
-.recurring-specials-heading {
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-}
-
-.recurring-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.recurring-card {
-  background: var(--white);
-  border: 1px solid rgba(26,26,26,0.08);
-  border-radius: 10px;
-  padding: 20px 24px;
-}
-
-.recurring-card h3 {
-  font-family: var(--font-display);
-  color: var(--ink);
-  font-size: 1.05rem;
-  margin: 0 0 6px;
-}
-
-.recurring-card p {
-  color: #444;
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-.new-arrivals {
-  padding: 48px 0 64px;
-}
-
-.new-arrivals h2 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-.new-arrivals-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
 
 /* Cream section + contained, red-bordered panel (same technique as
    .visit-cta / .brands-panel) so the signup reads as its own element
@@ -1352,7 +1423,10 @@ a:focus-visible, button:focus-visible {
   .page-header { padding: 48px 0 40px; }
   .page-header-callout { padding: 16px 20px; text-align: center; }
 
-  .recurring-grid { grid-template-columns: 1fr; }
+  .arrival-feature { grid-template-columns: 1fr; }
+  .arrival-feature-image { min-height: 0; height: 340px; }
+  .arrival-feature-body { padding: 24px 20px; }
+  .arrival-feature-notes { grid-template-columns: 1fr; gap: 10px; }
 
   .breadcrumb-list { justify-content: flex-start; }
   .visit-cta-panel { padding: 36px 24px; }

@@ -63,17 +63,63 @@
   <section class="page-header">
     <div class="wrap">
       <h1>Specials &amp; New Arrivals</h1>
-      <p class="page-header-sub">Current sale prices on beer, wine, and spirits, plus what just hit the shelves — all here at AJ's in Carterville.</p>
+      <p class="page-header-sub">What just hit the shelves, plus current sale prices on beer, wine, and spirits — all here at AJ's in Carterville.</p>
     </div>
   </section>
 
   <!-- ==========================================================
+       NEW ARRIVALS — first on the page. With only one new arrival,
+       it gets a full-width .arrival-feature card (image left, story
+       right; stacks on mobile). Price is shown here on purpose — the
+       "no pricing" rule applies to the product category pages, not
+       to this page. To feature a different bottle, swap the image,
+       name, meta, description, tasting notes, and price inside the
+       comment block below. Once there are several new arrivals at
+       once, switch back to a .new-arrivals-grid of .product-cards
+       (same as the category pages, each with a "New Arrival"
+       .product-badge).
+       ========================================================== -->
+  <section class="new-arrivals" id="new-arrivals">
+    <div class="wrap">
+      <h2>New Arrivals</h2>
+
+      <!-- New arrival feature: Weller Antique 107 -->
+      <article class="arrival-feature">
+        <div class="arrival-feature-image">
+          <img src="assets/products/bourbon-weller-antique-107-750ml.jpg" alt="W.L. Weller Antique 107 Kentucky Straight Wheated Bourbon, 750ml bottle">
+        </div>
+        <div class="arrival-feature-body">
+          <span class="arrival-feature-badge">New Arrival</span>
+          <h3 class="arrival-feature-name">Weller Antique 107</h3>
+          <p class="arrival-feature-meta">Wheated Bourbon &middot; 750ml &middot; 107 Proof</p>
+          <p class="arrival-feature-desc">Weller Antique 107 just landed at AJ's. It's a wheated bourbon, so wheat stands in for rye and gives it a rounder, softer sip. Bottled at 107 proof, it still has plenty of backbone. It's full-bodied, bold, and balanced, and it's a fine bottle to pour neat, over a big cube, or into your next Old Fashioned.</p>
+          <dl class="arrival-feature-notes">
+            <div>
+              <dt>Nose</dt>
+              <dd>Vanilla with sweet floral notes</dd>
+            </div>
+            <div>
+              <dt>Palate</dt>
+              <dd>Balanced sweetness, fruit, and more vanilla</dd>
+            </div>
+            <div>
+              <dt>Finish</dt>
+              <dd>Spicy, ending on warm cinnamon</dd>
+            </div>
+          </dl>
+          <p class="arrival-feature-price">$99.99</p>
+        </div>
+      </article>
+      <!-- End new arrival feature -->
+
+    </div>
+  </section>
+  <!-- END NEW ARRIVALS -->
+
+  <!-- ==========================================================
        ON SALE — discounted products. Kept plain and scannable: one
        grid of cards, each wrapped in its own comment block below so
-       the site owner can find and swap products easily. The
-       "Standing Weekly Specials" list further down covers ongoing,
-       no-end-date discounts (Wine Wednesday, etc.) separately from
-       the dated cards in the grid above it.
+       the site owner can find and swap products easily.
        ========================================================== -->
   <section class="on-sale" id="on-sale">
     <div class="wrap">
@@ -165,31 +211,6 @@
         <!-- End on sale card 6 -->
 
       </div>
-
-      <!-- ==========================================================
-           STANDING WEEKLY SPECIALS — no end date. Edit the day and
-           discount copy in each card.
-           ========================================================== -->
-      <div class="recurring-specials">
-        <h3 class="recurring-specials-heading">Standing Weekly Specials</h3>
-        <div class="recurring-grid">
-
-          <!-- Recurring special 1 -->
-          <div class="recurring-card">
-            <h3>Wine Wednesday</h3>
-            <p>10% off every bottle of wine in the store, every Wednesday.</p>
-          </div>
-
-          <!-- Recurring special 2 -->
-          <div class="recurring-card">
-            <h3>Weekend Beer Run</h3>
-            <p>Mix &amp; match any 6-packs, [X] for $[XX], Friday through Sunday.</p>
-          </div>
-
-        </div>
-      </div>
-      <!-- END STANDING WEEKLY SPECIALS -->
-
     </div>
   </section>
   <!-- END ON SALE -->
@@ -198,70 +219,10 @@
        STAFF PICKS — hidden for now, on purpose (only turn this on
        once staff are actually choosing the items; otherwise it reads
        as generic "Featured" dressed up). When ready: add a section
-       here between On Sale and New Arrivals, id="staff-picks",
-       reusing .product-card exactly like New Arrivals below with a
-       "Staff Pick" .product-badge on each card.
+       here after On Sale, id="staff-picks", reusing .product-card
+       exactly like the product category pages, with a "Staff Pick"
+       .product-badge on each card.
        ========================================================== -->
-
-  <!-- ==========================================================
-       NEW ARRIVALS — reuses the same .product-card component as the
-       product category pages (see CLAUDE.md), each wrapped in its
-       own comment block so products are easy to swap. No pricing
-       field, matching that convention.
-       ========================================================== -->
-  <section class="new-arrivals" id="new-arrivals">
-    <div class="wrap">
-      <h2>New Arrivals</h2>
-      <div class="new-arrivals-grid">
-
-        <!-- New arrival card 1: Spirits -->
-        <div class="product-card">
-          <span class="product-badge">New Arrival</span>
-          <div class="product-card-image">
-            <img src="assets/products/new-arrival-1.jpg" alt="[Spirit Name] photo" loading="lazy">
-          </div>
-          <h3 class="product-card-name">[Spirit Name]</h3>
-          <p class="product-card-meta">Spirits &middot; 750ml</p>
-        </div>
-        <!-- End new arrival card 1 -->
-
-        <!-- New arrival card 2: Wine -->
-        <div class="product-card">
-          <span class="product-badge">New Arrival</span>
-          <div class="product-card-image">
-            <img src="assets/products/new-arrival-2.jpg" alt="[Wine Name] photo" loading="lazy">
-          </div>
-          <h3 class="product-card-name">[Wine Name]</h3>
-          <p class="product-card-meta">Wine &middot; 750ml</p>
-        </div>
-        <!-- End new arrival card 2 -->
-
-        <!-- New arrival card 3: Beer -->
-        <div class="product-card">
-          <span class="product-badge">New Arrival</span>
-          <div class="product-card-image">
-            <img src="assets/products/new-arrival-3.jpg" alt="[Beer Name] photo" loading="lazy">
-          </div>
-          <h3 class="product-card-name">[Beer Name]</h3>
-          <p class="product-card-meta">Beer &middot; 6-pack</p>
-        </div>
-        <!-- End new arrival card 3 -->
-
-        <!-- New arrival card 4: Ready-to-Drink -->
-        <div class="product-card">
-          <span class="product-badge">New Arrival</span>
-          <div class="product-card-image">
-            <img src="assets/products/new-arrival-4.jpg" alt="[RTD Cocktail Name] photo" loading="lazy">
-          </div>
-          <h3 class="product-card-name">[RTD Cocktail Name]</h3>
-          <p class="product-card-meta">Ready-to-Drink &middot; 4-pack</p>
-        </div>
-        <!-- End new arrival card 4 -->
-
-      </div>
-    </div>
-  </section>
-  <!-- END NEW ARRIVALS -->
 
   <!-- ==========================================================
        SPECIAL ALERT SIGNUP — Zite embed. The Zite form already

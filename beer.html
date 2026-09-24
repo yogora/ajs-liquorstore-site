@@ -14,6 +14,14 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- Live open/closed status, filled in by js/store-hours.js. The
+     text below is the no-JS fallback. -->
+<div class="store-status-strip">
+  <div class="wrap">
+    <p class="store-status" id="store-status">See today's hours &amp; get directions on our <a href="visit-us.html">Visit Us</a> page.</p>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="index.html">
@@ -37,8 +45,8 @@
         </div>
       </details>
       <a href="deals.html">Deals</a>
-      <a href="about.html">About</a>
-      <a href="#location">Hours &amp; Location</a>
+      <a href="visit-us.html">Visit Us</a>
+      <a class="btn btn-primary nav-directions-btn" href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">Get Directions</a>
     </nav>
   </div>
 </header>
@@ -478,7 +486,7 @@
 
 </main>
 
-<footer class="site-footer" id="location">
+<footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-col">
       <h2>Location</h2>
@@ -498,6 +506,25 @@
     <p class="footer-note">Please drink responsibly. Must be 21+ to purchase. Promotions subject to change and while supplies last. See store for current pricing.</p>
   </div>
 </footer>
+
+<!-- Sticky mobile action bar — hidden above 700px, where the header's
+     nav and Get Directions button already cover the same needs. -->
+<nav class="mobile-action-bar" aria-label="Quick actions">
+  <a href="https://maps.google.com/?q=1207+S+Division+St,+Carterville,+IL+62918" target="_blank" rel="noopener">
+    <svg width="18" height="22" viewBox="0 0 28 36" fill="none" aria-hidden="true"><path d="M14 0C6.3 0 0 6.3 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.3 21.7 0 14 0z" fill="currentColor"/><circle cx="14" cy="14" r="5.5" fill="var(--ink)"/></svg>
+    Directions
+  </a>
+  <a href="tel:6189852777">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    Call
+  </a>
+  <a href="visit-us.html">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Hours
+  </a>
+</nav>
+
+<script src="js/store-hours.js" defer></script>
 
 </body>
 </html>

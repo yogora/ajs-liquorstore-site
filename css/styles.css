@@ -834,11 +834,12 @@ a:focus-visible, button:focus-visible {
    needs. Override it here (rather than editing the snippet itself)
    to remove the excess blank space — the form centers itself
    vertically in this height, so any surplus shows up as dead space
-   above the headline. 350px is about the minimum before the iframe
-   starts scrolling. Adjust this value if the form ever grows or
-   shrinks. */
+   above the headline. Sized for the form's *expanded* state: clicking
+   "+ Add your name" reveals First/Last Name fields (~90px taller),
+   and anything under ~450px makes the iframe scroll at that point.
+   Adjust this value if the form ever grows or shrinks. */
 .deal-alert-embed > div {
-  height: 350px !important;
+  height: 450px !important;
 }
 
 /* ---- Product pages (Spirits / Beer / Wine / Ready-to-Drink) ---- */
@@ -1311,8 +1312,9 @@ a:focus-visible, button:focus-visible {
   .brands-panel { padding: 36px 24px; }
   .deal-alert-panel { padding: 16px 12px; }
   /* Narrower form wraps its text onto more lines, so it needs more
-     height than desktop's 350px before the iframe starts scrolling. */
-  .deal-alert-embed > div { height: 440px !important; }
+     height than desktop's 450px (again sized for the expanded
+     "+ Add your name" state) before the iframe starts scrolling. */
+  .deal-alert-embed > div { height: 540px !important; }
   .brand-list { gap: 10px 22px; }
 }
 

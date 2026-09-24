@@ -1047,6 +1047,39 @@ a:focus-visible, button:focus-visible {
   color: #333;
 }
 
+.about-gallery {
+  padding: 0 0 64px;
+}
+
+.about-gallery-feature {
+  aspect-ratio: 2.5 / 1;
+  background: rgba(26,26,26,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.about-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.about-gallery-item {
+  aspect-ratio: 5 / 4;
+  background: rgba(26,26,26,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-gallery-feature img,
+.about-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .about-feature {
   background: var(--white);
   padding: 56px 0;
@@ -1158,6 +1191,7 @@ a:focus-visible, button:focus-visible {
   .stop-in-grid { grid-template-columns: 1fr; }
   .stop-in-map { aspect-ratio: 16 / 9; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+  .about-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {
@@ -1228,7 +1262,6 @@ a:focus-visible, button:focus-visible {
   .hero { min-height: 620px; padding-bottom: 40px; }
   .page-header { padding: 48px 0 40px; }
   .page-header-callout { padding: 16px 20px; text-align: center; }
-  .offerings-list { grid-template-columns: 1fr; }
 
   .dow-card { flex-direction: column; align-items: center; text-align: center; }
   .dow-content { max-width: none; }

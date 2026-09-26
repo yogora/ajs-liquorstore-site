@@ -314,7 +314,7 @@
     var href = link.getAttribute('href') || '';
     if (href.indexOf('tel:') === 0) {
       gtag('event', 'click_to_call', { page_path: location.pathname });
-    } else if (/google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|maps\.apple\.com/.test(href)) {
+    } else if (/maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com/.test(href)) {
       gtag('event', 'get_directions', { page_path: location.pathname });
     }
   });

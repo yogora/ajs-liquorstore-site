@@ -275,7 +275,9 @@
       gtag('event', 'click_to_call', { page_path: location.pathname });
     } else if (/g\.page\/r\/[^/]+\/review/.test(href)) {
       gtag('event', 'click_review', { page_path: location.pathname });
-    } else if (href.indexOf('/maps/search/') === -1 && /google\.com\/maps\/dir\/|maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com/.test(href)) {
+    } else if (/google\.[a-z.]+\/maps\/search\//.test(href)) {
+      gtag('event', 'read_reviews', { page_path: location.pathname });
+    } else if (/google\.com\/maps\/dir\/|maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com/.test(href)) {
       gtag('event', 'get_directions', { page_path: location.pathname });
     }
   });

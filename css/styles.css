@@ -563,6 +563,38 @@ a:focus-visible, button:focus-visible {
   margin: 0;
 }
 
+/* ---- Reviews ----
+   Links out to Google only. No star rating, review count, or quotes
+   on purpose, since those go stale. */
+.reviews {
+  background: var(--white);
+  padding: 64px 0;
+  border-top: 1px solid rgba(26,26,26,0.06);
+}
+
+.reviews-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reviews-inner h2 {
+  font-size: 1.4rem;
+  margin: 0 0 12px;
+}
+
+.reviews-inner p {
+  color: #555;
+  margin: 0 0 24px;
+}
+
+.reviews-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* ---- Brands ----
    A contained, rounded panel (like the Visit Us CTA on category
    pages) rather than a full-bleed dark band, so it reads as its
@@ -1156,6 +1188,10 @@ a:focus-visible, button:focus-visible {
   font-weight: 700;
 }
 
+.visit-info-review {
+  margin-top: 16px;
+}
+
 .visit-info-inner .map-embed {
   margin: 12px 0 4px;
 }
@@ -1280,6 +1316,42 @@ a:focus-visible, button:focus-visible {
 .footer-col p {
   margin: 0 0 16px;
   color: #d9d9d9;
+}
+
+/* "Find us on" row: Google reviews + Yelp, above the footer note. */
+.footer-social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin-bottom: 24px;
+}
+
+.footer-social-label {
+  margin: 0 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--white) 70%, transparent);
+}
+
+.site-footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid color-mix(in srgb, var(--white) 30%, transparent);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.site-footer .footer-social a:hover {
+  background: var(--red);
+  border-color: var(--red);
 }
 
 .footer-note {

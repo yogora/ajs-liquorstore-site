@@ -516,6 +516,17 @@
       <p>Monday – Thursday: 9:00 AM – 10:00 PM<br>Friday – Saturday: 9:00 AM – 11:00 PM<br>Sunday: 11:00 AM – 9:00 PM</p>
     </div>
   </div>
+  <div class="wrap footer-social">
+    <p class="footer-social-label">Find us on</p>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=AJ%27s+Beer%2C+Wine+%26+Spirits&amp;query_place_id=ChIJadKvaBU9d4gRqlosNyIN6GE" target="_blank" rel="noopener" aria-label="Read our reviews on Google (opens in a new tab)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 12.2c0 4.8-3.6 8.3-8.5 8.3a8.5 8.5 0 010-17c2.3 0 4.2.8 5.7 2.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12.5 12.2h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      Google
+    </a>
+    <a href="https://www.yelp.com/biz/ajs-beer-wine-and-spirits-carterville" target="_blank" rel="noopener" aria-label="Find us on Yelp (opens in a new tab)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 016.5 3h11A2.5 2.5 0 0120 5.5v8a2.5 2.5 0 01-2.5 2.5H11l-4.5 4v-4A2.5 2.5 0 014 13.5v-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6.3l1.1 2.3 2.5.3-1.8 1.7.5 2.5-2.3-1.2-2.3 1.2.5-2.5-1.8-1.7 2.5-.3z" fill="currentColor"/></svg>
+      Yelp
+    </a>
+  </div>
   <div class="wrap">
     <p class="footer-note">Please drink responsibly. Must be 21+ to purchase. Promotions subject to change and while supplies last. See store for current pricing.</p>
   </div>
@@ -547,7 +558,9 @@
     var href = link.getAttribute('href') || '';
     if (href.indexOf('tel:') === 0) {
       gtag('event', 'click_to_call', { page_path: location.pathname });
-    } else if (/google\.com\/maps\/dir\/|maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com/.test(href)) {
+    } else if (/g\.page\/r\/[^/]+\/review/.test(href)) {
+      gtag('event', 'click_review', { page_path: location.pathname });
+    } else if (href.indexOf('/maps/search/') === -1 && /google\.com\/maps\/dir\/|maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com/.test(href)) {
       gtag('event', 'get_directions', { page_path: location.pathname });
     }
   });

@@ -409,42 +409,30 @@ a:focus-visible, button:focus-visible {
   margin: 0;
 }
 
+/* 2x2 grid of the owner's 4:3 promo graphics; one column on phones. */
 .this-week-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
-.week-card {
-  background: var(--off-white);
+.week-promo {
+  display: block;
   border-radius: 14px;
-  padding: 32px 24px;
-  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(26,26,26,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.week-card-brand {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--ink);
-  margin: 0 0 4px;
+.week-promo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(26,26,26,0.12);
 }
 
-.week-card-size {
-  color: #777;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin: 0 0 18px;
-}
-
-.week-card-price {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.7rem;
-  color: var(--red);
-  margin: 0;
+.week-promo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .this-week-more {

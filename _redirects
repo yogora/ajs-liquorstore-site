@@ -1,5 +1,17 @@
+# Clean, extensionless URLs are canonical. Netlify serves /spirits from
+# spirits.html on its own; these force-redirect the .html versions so each
+# page has exactly one public URL. Rules match the request path only, so
+# /spirits never re-matches /spirits.html — no loop.
+/index.html           /                 301!
+/spirits.html         /spirits          301!
+/beer.html            /beer             301!
+/ready-to-drink.html  /ready-to-drink   301!
+/wine.html            /wine             301!
+/specials.html        /specials         301!
+/visit-us.html        /visit-us         301!
+
 # About was folded into Visit Us — send the old URL there instead of a 404.
-/about.html  /visit-us.html  301
+/about.html  /visit-us  301!
 
 # Deals was renamed to Specials — send the old URL there instead of a 404.
-/deals.html  /specials.html  301
+/deals.html  /specials  301!

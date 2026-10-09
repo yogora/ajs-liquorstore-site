@@ -5,3 +5,5 @@ Static site for AJ's Beer, Wine & Spirits (Carterville, IL), hosted on Netlify a
 ## SEO maintenance
 
 **Whenever a new page is added to the site, add it to `sitemap.xml`** (a `<url>` entry with its canonical URL and a `<lastmod>` date) so it gets picked up by Google Search Console. Also give the new page its own self-referencing `<link rel="canonical">` tag, matching the pattern already used on every existing page.
+
+**Canonical URLs are clean and extensionless** — `https://ajscarterville.com/spirits`, not `…/spirits.html` (home is `https://ajscarterville.com/`). Use that form in `<link rel="canonical">`, `og:url`, and `sitemap.xml`, and add a `/<page>.html  /<page>  301!` rule to `_redirects` for every new page.

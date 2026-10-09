@@ -130,8 +130,8 @@
     var el = document.getElementById("store-status");
     if (!el) return;
     var message = getStatusMessage();
-    var onVisitPage = /(^|\/)visit-us\.html$/.test(window.location.pathname);
-    el.innerHTML = message + (onVisitPage ? "" : " — <a href=\"visit-us.html\">Visit Us</a>");
+    var onVisitPage = /(^|\/)visit-us(\.html)?\/?$/.test(window.location.pathname);
+    el.innerHTML = message + (onVisitPage ? "" : " — <a href=\"/visit-us\">Visit Us</a>");
   }
 
   function highlightToday() {

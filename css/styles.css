@@ -820,6 +820,11 @@ a:focus-visible, button:focus-visible {
   border: 1px solid rgba(26,26,26,0.08);
   border-radius: 10px;
   padding: 16px;
+  /* Column flex so the price row can sit at the bottom: cards in a
+     row stay equal height, and prices line up even when one name
+     wraps to more lines than its neighbor's. */
+  display: flex;
+  flex-direction: column;
 }
 
 /* White so white-backdrop product shots blend into the card;
@@ -842,17 +847,19 @@ a:focus-visible, button:focus-visible {
 .on-sale-name {
   font-family: var(--font-display);
   font-size: 1.05rem;
-  margin: 0 0 2px;
+  line-height: 1.25;
+  margin: 0 0 4px;
 }
 
 .on-sale-meta {
   color: #777;
   font-size: 0.85rem;
+  line-height: 1.4;
   margin: 0 0 8px;
 }
 
 .on-sale-price-row {
-  margin: 0;
+  margin: auto 0 0;
 }
 
 .on-sale-price {
@@ -1500,7 +1507,10 @@ a:focus-visible, button:focus-visible {
   /* Stay at 2 columns (not 1fr) so the compact tiles form a 2x2
      grid instead of a tall single-column stack on small phones. */
   .category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .on-sale-grid { grid-template-columns: 1fr; }
+  /* 2 columns like .product-grid on the category pages; tighter
+     padding keeps the sale + original price on one line. */
+  .on-sale-grid { grid-template-columns: repeat(2, 1fr); }
+  .on-sale-card { padding: 12px; }
   .new-arrivals-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .highlights-grid { grid-template-columns: 1fr; gap: 28px; }

@@ -259,23 +259,45 @@ a:focus-visible, button:focus-visible {
 
 /* ---- Hero ---- */
 /* The storefront sign sits in a fixed vertical band of the photo
-   (see background-position below), so the H1 and CTA are split to
+   (see object-position on .hero-image below), so the H1 and CTA are split to
    the top and bottom of the box — via .hero-inner's own column flex
    — instead of stacked together, so neither ever overlaps the sign.
    Two gradients (top-down for the headline, bottom-up for the
    button) keep both readable while leaving the sign itself clear. */
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;
   min-height: 440px;
   text-align: center;
+  background: var(--ink); /* shows only until the photo loads */
+}
+
+/* The photo is a real <img> (not a CSS background) so it can carry
+   width/height and fetchpriority="high" as the page's LCP element.
+   object-fit/object-position reproduce the old `cover` + 31% 18%. */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 31% 18%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0) 28%),
-    linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 38%),
-    url("../assets/hero-exterior.png") 31% 18% / cover no-repeat;
+    linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 38%);
+  pointer-events: none;
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 640px;
   margin: 0 auto;
   display: flex;
@@ -389,6 +411,15 @@ a:focus-visible, button:focus-visible {
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   color: var(--red);
+}
+
+/* 404.html only: button row under the reused category tiles. */
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
 }
 
 /* ---- This Week In The Store ---- */

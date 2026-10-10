@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Generate assets/og-image.jpg — the Open Graph / Twitter Card share
-image for the site — from the hero storefront photo plus the AJ's
-logo badge.
+image for the site — from the full-resolution masters in
+scripts/source/ (hero storefront photo plus the AJ's logo badge).
 
 Usage: python scripts/make-og-image.py
 (Run from the repo root, or anywhere — paths below are resolved
@@ -15,8 +15,8 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-HERO_PATH = ROOT / "assets" / "hero-exterior.png"
-LOGO_PATH = ROOT / "assets" / "ajs-logo.png"
+HERO_PATH = ROOT / "scripts" / "source" / "hero-exterior.png"
+LOGO_PATH = ROOT / "scripts" / "source" / "ajs-logo.png"
 OUT_PATH = ROOT / "assets" / "og-image.jpg"
 
 OUT_W, OUT_H = 1200, 630

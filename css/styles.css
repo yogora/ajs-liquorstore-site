@@ -372,6 +372,14 @@ a:focus-visible, button:focus-visible {
   padding: 64px 0;
 }
 
+.category-cta-intro {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

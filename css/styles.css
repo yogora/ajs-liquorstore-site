@@ -783,6 +783,23 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 12px;
 }
 
+/* Second inline label next to the badge (e.g. a store barrel pick):
+   same pill shape, outlined instead of solid so the two read apart. */
+.arrival-feature-pick {
+  display: inline-block;
+  background: var(--white);
+  color: var(--red);
+  border: 2px solid var(--red);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
 .arrival-feature-name {
   font-family: var(--font-display);
   color: var(--ink);
@@ -802,6 +819,8 @@ a:focus-visible, button:focus-visible {
   margin: 0 0 20px;
 }
 
+/* Optional Nose/Palate/Finish list. Not in use right now (the
+   Weller barrel pick card leaves it off); kept for future cards. */
 .arrival-feature-notes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1150,8 +1150,9 @@ a:focus-visible, button:focus-visible {
   text-align: center;
 }
 
+/* 600px so Call, Get Directions, and Apple Maps fit on one row. */
 .visit-cta-content {
-  max-width: 560px;
+  max-width: 600px;
 }
 
 .visit-cta-content h2 {
@@ -1369,6 +1370,13 @@ a:focus-visible, button:focus-visible {
 .footer-col p {
   margin: 0 0 16px;
   color: #d9d9d9;
+}
+
+/* Google + Apple Maps directions buttons, side by side. */
+.footer-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* "Find us on" row: Google reviews + Yelp, above the footer note. */

@@ -89,7 +89,8 @@
   "hasMap": "https://maps.google.com/?cid=7054903256881584810",
   "sameAs": [
     "https://maps.google.com/?cid=7054903256881584810",
-    "https://www.yelp.com/biz/ajs-beer-wine-and-spirits-carterville"
+    "https://www.yelp.com/biz/ajs-beer-wine-and-spirits-carterville",
+    "https://maps.apple/p/9-ce5T_QIn2TTo"
   ]
 }
 </script>
@@ -231,6 +232,7 @@
         <p class="stop-in-hours">Monday – Thursday: 9:00 AM – 10:00 PM<br>Friday – Saturday: 9:00 AM – 11:00 PM<br>Sunday: 11:00 AM – 9:00 PM</p>
         <div class="stop-in-actions">
           <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=AJ%27s+Beer%2C+Wine+%26+Spirits&amp;destination_place_id=ChIJadKvaBU9d4gRqlosNyIN6GE" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-ghost-ink" href="https://maps.apple/p/9-ce5T_QIn2TTo" target="_blank" rel="noopener noreferrer" aria-label="Directions in Apple Maps (opens in a new tab)">Apple Maps</a>
           <a class="btn btn-ghost-ink" href="tel:6189852777">Call (618) 985-2777</a>
         </div>
       </div>
@@ -341,7 +343,10 @@
         Carterville, IL 62918
       </address>
       <p><a href="tel:6189852777">(618) 985-2777</a></p>
-      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=AJ%27s+Beer%2C+Wine+%26+Spirits&amp;destination_place_id=ChIJadKvaBU9d4gRqlosNyIN6GE" target="_blank" rel="noopener">Get Directions</a>
+      <div class="footer-actions">
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=AJ%27s+Beer%2C+Wine+%26+Spirits&amp;destination_place_id=ChIJadKvaBU9d4gRqlosNyIN6GE" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-ghost" href="https://maps.apple/p/9-ce5T_QIn2TTo" target="_blank" rel="noopener noreferrer" aria-label="Directions in Apple Maps (opens in a new tab)">Apple Maps</a>
+      </div>
     </div>
     <div class="footer-col">
       <h2>Hours</h2>
@@ -394,7 +399,7 @@
       gtag('event', 'click_review', { page_path: location.pathname });
     } else if (/google\.[a-z.]+\/maps\/search\//.test(href)) {
       gtag('event', 'read_reviews', { page_path: location.pathname });
-    } else if (/google\.com\/maps\/dir\/|maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com/.test(href)) {
+    } else if (/google\.com\/maps\/dir\/|maps\.google\.|google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|g\.page|maps\.apple\.com|maps\.apple\//.test(href)) {
       gtag('event', 'get_directions', { page_path: location.pathname });
     }
   });

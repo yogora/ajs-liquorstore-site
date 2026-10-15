@@ -15,3 +15,9 @@
 
 # Deals was renamed to Specials — send the old URL there instead of a 404.
 /deals.html  /specials  301!
+
+# Apple Business Connect blocks UTM parameters on the listing's website
+# URL, so the listing links to /apple and we tag the visit here. 302 (not
+# 301) so browsers don't cache it and the UTMs can change later. Not
+# linked anywhere on the site, and there's no apple.html for it to shadow.
+/apple  /?utm_source=apple_maps&utm_medium=place_card&utm_campaign=apple_business  302

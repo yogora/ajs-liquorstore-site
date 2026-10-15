@@ -1379,7 +1379,7 @@ a:focus-visible, button:focus-visible {
   flex-wrap: wrap;
 }
 
-/* "Find us on" row: Google reviews + Yelp, above the footer note. */
+/* "Find us on" row: Google reviews + Yelp + Apple Maps, above the footer note. */
 .footer-social {
   display: flex;
   align-items: center;

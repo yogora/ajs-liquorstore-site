@@ -857,6 +857,149 @@ a:focus-visible, button:focus-visible {
   margin: 0;
 }
 
+/* ---- Spotlight ad ----
+   A wide promo card for featuring one or two products at once, used
+   in two places: on the homepage, between the This Week In The Store
+   heading and its promo grid, and on the Specials page, at the top of
+   New Arrivals above the .arrival-feature card. Unlike the This Week
+   graphics, it's plain HTML (copy, prices, and stats are real text),
+   so editing it doesn't need a redesigned image. It reuses the
+   .arrival-feature-badge / .arrival-feature-pick pills. Body left,
+   products right; stacks at 860px, products go single-column at 520px.
+   Keep the two copies (index.html and specials.html) identical. */
+.spotlight-ad {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--white);
+  border: 2px solid var(--red);
+  border-radius: 14px;
+  padding: 32px 36px;
+  margin-bottom: 24px;
+}
+
+.spotlight-ad-title {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.spotlight-ad-desc {
+  color: #333;
+  margin: 0 0 20px;
+}
+
+/* Four quick stats in a row, set off by thin rules above and below
+   (the same treatment as .arrival-feature-notes). */
+.spotlight-ad-stats {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(26,26,26,0.08);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #555;
+  line-height: 1.3;
+}
+
+.spotlight-ad-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0;
+  color: var(--red);
+  line-height: 1.1;
+}
+
+/* Keeps short hyphenated phrases ("8-pack cans", "drive-thru")
+   from splitting across lines. */
+.spotlight-ad .nowrap { white-space: nowrap; }
+
+.spotlight-ad-cta {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+}
+
+.spotlight-ad-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.spotlight-ad-product {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* In-store photos keep their 4:3 crop: cover, not contain, since the
+   box fills the frame and there's no white backdrop to blend into. */
+.spotlight-ad-product img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #eee;
+}
+
+.spotlight-ad-product figcaption {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 12px;
+}
+
+.spotlight-ad-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.spotlight-ad-meta {
+  color: #777;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 2px 0 10px;
+}
+
+/* margin-top: auto pins both prices to the same baseline even when
+   one product's flavor line wraps to more lines. */
+.spotlight-ad-price {
+  margin-top: auto;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--red);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+@media (max-width: 860px) {
+  .spotlight-ad {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .spotlight-ad-products { grid-template-columns: 1fr; }
+  .spotlight-ad-stats strong { font-size: 1.2rem; }
+}
+
 .on-sale {
   padding: 48px 0 64px;
 }
